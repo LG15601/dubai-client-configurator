@@ -10,11 +10,11 @@
   --text-primary: #FFFFFF;
   --text-secondary: rgba(255, 255, 255, 0.7);
   --text-tertiary: rgba(255, 255, 255, 0.45);
-  --accent-green: #30D158;
-  --accent-blue: #0A84FF;
-  --accent-orange: #FF9F0A;
-  --accent-red: #FF453A;
-  --accent-teal: #64D2FF;
+  --accent-green: #5AE68C;
+  --accent-blue: #4EB1FF;
+  --accent-orange: #FFB844;
+  --accent-red: #FF6B63;
+  --accent-teal: #7EDCFF;
 }
 
 * { box-sizing: border-box; }
@@ -32,55 +32,55 @@ body {
 
 /* ─── Liquid Glass ─── */
 .liquid-glass {
-  background: rgba(80, 80, 88, 0.35);
-  backdrop-filter: blur(60px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(60px) saturate(180%) brightness(1.05);
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: rgba(90, 90, 98, 0.42);
+  backdrop-filter: blur(80px) saturate(180%) brightness(0.95);
+  -webkit-backdrop-filter: blur(80px) saturate(180%) brightness(0.95);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
   box-shadow:
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.02),
-    0 8px 32px rgba(0, 0, 0, 0.25),
-    0 2px 6px rgba(0, 0, 0, 0.15);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    inset 0 0 24px rgba(255, 255, 255, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .liquid-glass-strong {
-  background: rgba(90, 90, 100, 0.4);
-  backdrop-filter: blur(80px) saturate(200%) brightness(1.08);
-  -webkit-backdrop-filter: blur(80px) saturate(200%) brightness(1.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background: rgba(100, 100, 110, 0.48);
+  backdrop-filter: blur(100px) saturate(200%) brightness(0.92);
+  -webkit-backdrop-filter: blur(100px) saturate(200%) brightness(0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.24);
   border-radius: 28px;
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 30px rgba(255, 255, 255, 0.03),
-    0 12px 40px rgba(0, 0, 0, 0.3),
-    0 2px 8px rgba(0, 0, 0, 0.2);
+    inset 0 2px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    inset 0 0 40px rgba(255, 255, 255, 0.03),
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.22);
 }
 
 .liquid-glass-subtle {
-  background: rgba(75, 75, 82, 0.3);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(85, 85, 92, 0.38);
+  backdrop-filter: blur(60px) saturate(180%) brightness(0.95);
+  -webkit-backdrop-filter: blur(60px) saturate(180%) brightness(0.95);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 20px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15),
-    0 6px 24px rgba(0, 0, 0, 0.2);
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+    0 6px 24px rgba(0, 0, 0, 0.22);
 }
 
 .liquid-glass-pill {
-  background: rgba(80, 80, 88, 0.35);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: rgba(90, 90, 98, 0.42);
+  backdrop-filter: blur(60px) saturate(200%) brightness(0.95);
+  -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(0.95);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
   border-radius: 100px;
   box-shadow:
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.12),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15),
-    0 4px 16px rgba(0, 0, 0, 0.2);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.22);
 }
 
 /* Hover lift */
@@ -88,14 +88,14 @@ body {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .glass-hover:hover {
-  background: rgba(100, 100, 110, 0.42);
-  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(110, 110, 120, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
-    0 16px 48px rgba(0, 0, 0, 0.35),
-    0 4px 12px rgba(0, 0, 0, 0.2);
+    inset 0 2px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25),
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.22);
 }
 
 /* ─── Progress Ring ─── */
