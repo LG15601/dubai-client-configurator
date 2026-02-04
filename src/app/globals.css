@@ -32,49 +32,55 @@ body {
 
 /* ─── Liquid Glass ─── */
 .liquid-glass {
-  background: rgba(20, 20, 24, 0.55);
-  backdrop-filter: blur(60px) saturate(200%) brightness(1.05);
-  -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.05);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 28px;
+  background: rgba(80, 80, 88, 0.35);
+  backdrop-filter: blur(60px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(60px) saturate(180%) brightness(1.05);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15),
-    0 20px 60px rgba(0, 0, 0, 0.4);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .liquid-glass-strong {
-  background: rgba(16, 16, 20, 0.6);
-  backdrop-filter: blur(80px) saturate(220%) brightness(1.1);
-  -webkit-backdrop-filter: blur(80px) saturate(220%) brightness(1.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(90, 90, 100, 0.4);
+  backdrop-filter: blur(80px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(80px) saturate(200%) brightness(1.08);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
   border-radius: 28px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1),
-    0 25px 80px rgba(0, 0, 0, 0.45);
+    inset 0 2px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.03),
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .liquid-glass-subtle {
-  background: rgba(20, 20, 24, 0.45);
+  background: rgba(75, 75, 82, 0.3);
   backdrop-filter: blur(40px) saturate(180%);
   -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.07),
-    0 8px 32px rgba(0, 0, 0, 0.3);
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+    0 6px 24px rgba(0, 0, 0, 0.2);
 }
 
 .liquid-glass-pill {
-  background: rgba(16, 16, 20, 0.5);
+  background: rgba(80, 80, 88, 0.35);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
   border-radius: 100px;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 4px 16px rgba(0, 0, 0, 0.25);
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15),
+    0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Hover lift */
@@ -82,12 +88,14 @@ body {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .glass-hover:hover {
-  background: rgba(20, 20, 24, 0.65);
-  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(100, 100, 110, 0.42);
+  border-color: rgba(255, 255, 255, 0.28);
   transform: translateY(-3px);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 30px 80px rgba(0, 0, 0, 0.5);
+    inset 0 2px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+    0 16px 48px rgba(0, 0, 0, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* ─── Progress Ring ─── */
@@ -181,10 +189,10 @@ body {
   inset: 0;
   background:
     linear-gradient(180deg, 
-      rgba(0,0,0,0.3) 0%, 
-      rgba(0,0,0,0.15) 30%,
-      rgba(0,0,0,0.2) 60%,
-      rgba(0,0,0,0.6) 100%
+      rgba(15,12,8,0.45) 0%, 
+      rgba(15,12,8,0.25) 30%,
+      rgba(15,12,8,0.3) 60%,
+      rgba(15,12,8,0.65) 100%
     );
 }
 
