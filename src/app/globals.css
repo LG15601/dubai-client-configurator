@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 :root {
   --brand-gold: #D4AF37;
   --brand-navy: #1A2A3A;
@@ -203,6 +201,15 @@ body {
 
 .pulse-gold {
   animation: pulse-gold 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Responsive helpers */
