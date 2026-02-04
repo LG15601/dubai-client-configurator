@@ -1,221 +1,441 @@
 @import "tailwindcss";
 
 :root {
-  --brand-gold: #D4AF37;
-  --brand-navy: #1A2A3A;
-  --brand-cream: #FDF8F3;
+  /* Apple-inspired palette */
+  --bg-off-white: #FDFDFD;
+  --text-primary: #1D1D1F;
+  --text-secondary: #8A8A8E;
+  --project-green: #34C759;
+  --timeline-blue: #007AFF;
+  --payment-coral: #FF6347;
+  --alert-red: #FF3B30;
+  --border-light: #E5E5E5;
+  
+  /* Ring dimensions */
+  --ring-outer: 280px;
+  --ring-thickness: 22px;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--brand-cream);
+  background: var(--bg-off-white);
+  color: var(--text-primary);
 }
 
-/* Glassmorphism */
-.glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+/* iPad Frame */
+.ipad-frame {
+  width: 100vw;
+  height: 100vh;
+  max-width: 1366px;
+  max-height: 1024px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 10% 65% 25%;
+  padding: 24px 32px;
+  gap: 16px;
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+/* Top Bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
 }
 
-.glass-dark {
-  background: rgba(26, 42, 58, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.project-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
 }
 
-.glass-gold {
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+.client-welcome {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 
-/* Card styles */
-.card-luxury {
-  background: white;
-  border-radius: 24px;
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.04),
-    0 1px 3px rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.04);
+/* Center Stage - 3 columns */
+.center-stage {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  gap: 24px;
+  align-items: center;
 }
 
-.card-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+/* Panels */
+.panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.04);
+.panel-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
 }
 
-/* Gold gradient */
-.gradient-gold {
-  background: linear-gradient(135deg, #D4AF37 0%, #E8D5A3 50%, #D4AF37 100%);
+/* Milestone list */
+.milestone-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.gradient-gold-text {
-  background: linear-gradient(135deg, #D4AF37 0%, #B8960C 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.milestone-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-/* Dubai luxury gradient */
-.gradient-dubai {
-  background: linear-gradient(135deg, #FDF8F3 0%, #E8DED1 100%);
+.milestone-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-/* Progress ring */
-.progress-ring {
+.milestone-dot.completed {
+  background: var(--project-green);
+}
+
+.milestone-dot.in-progress {
+  background: transparent;
+  border: 3px solid var(--timeline-blue);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+.milestone-dot.upcoming {
+  background: transparent;
+  border: 2px solid var(--border-light);
+}
+
+.milestone-text {
+  font-size: 17px;
+  color: var(--text-primary);
+}
+
+.milestone-text.completed {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.milestone-text.upcoming {
+  color: var(--text-secondary);
+}
+
+/* Activity Rings Container */
+.rings-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.rings-wrapper {
+  position: relative;
+  width: var(--ring-outer);
+  height: var(--ring-outer);
+}
+
+/* SVG Rings */
+.activity-rings {
+  width: 100%;
+  height: 100%;
   transform: rotate(-90deg);
 }
 
-.progress-ring circle {
-  transition: stroke-dashoffset 1s ease-out;
+.ring-track {
+  fill: none;
+  stroke: var(--border-light);
+  stroke-width: var(--ring-thickness);
 }
 
-/* Smooth scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+.ring-progress {
+  fill: none;
+  stroke-width: var(--ring-thickness);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+.ring-project {
+  stroke: var(--project-green);
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+.ring-timeline {
+  stroke: var(--timeline-blue);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.2);
+.ring-payment {
+  stroke: var(--payment-coral);
 }
 
-/* Timeline */
-.timeline-line {
-  background: linear-gradient(to bottom, #D4AF37 0%, #E8DED1 100%);
-}
-
-/* Material card shimmer */
-.shimmer-overlay {
+/* Ring Center Hub */
+.ring-center {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 50%,
-    transparent 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s linear infinite;
-  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
-/* Step indicator */
-.step-active {
-  background: linear-gradient(135deg, #D4AF37 0%, #B8960C 100%);
-  color: white;
+.ring-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.step-complete {
-  background: #D4AF37;
-  color: white;
+.ring-date {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
 }
 
-.step-pending {
-  background: #E8DED1;
-  color: #7A6248;
+.impact-alert {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--alert-red);
+  animation: pulse-alert 1.5s ease-in-out infinite;
+  margin-top: 4px;
 }
 
-/* Button styles */
-.btn-gold {
-  background: linear-gradient(135deg, #D4AF37 0%, #B8960C 100%);
-  color: white;
+/* Ring Legend */
+.ring-legend {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-dot.project {
+  background: var(--project-green);
+}
+
+.legend-dot.timeline {
+  background: var(--timeline-blue);
+}
+
+.legend-dot.payment {
+  background: var(--payment-coral);
+}
+
+.legend-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Financial Panel */
+.financial-data {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.financial-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.financial-label {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.financial-value {
+  font-size: 20px;
   font-weight: 600;
-  padding: 14px 28px;
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  color: var(--text-primary);
 }
 
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-}
-
-.btn-outline {
-  background: transparent;
-  color: #1A2A3A;
+.payment-status {
+  margin-top: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
   font-weight: 500;
-  padding: 14px 28px;
-  border-radius: 16px;
-  border: 2px solid #E8DED1;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.btn-outline:hover {
-  border-color: #D4AF37;
-  background: rgba(212, 175, 55, 0.05);
+.payment-status.on-time {
+  background: rgba(52, 199, 89, 0.1);
+  color: var(--project-green);
+}
+
+.payment-status.overdue {
+  background: rgba(255, 59, 48, 0.1);
+  color: var(--alert-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Bottom Panel - Ambiance Catalogue */
+.bottom-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ambiance-header {
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.ambiance-header strong {
+  font-weight: 600;
+}
+
+.ambiance-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  height: 100%;
+}
+
+.ambiance-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+.ambiance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ambiance-card.selected {
+  border: 2px solid var(--timeline-blue);
+}
+
+.ambiance-image {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ambiance-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ambiance-title {
+  padding: 14px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: white;
 }
 
 /* Animations */
-@keyframes pulse-gold {
+@keyframes pulse-ring {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+    opacity: 0.5;
   }
 }
 
-.pulse-gold {
-  animation: pulse-gold 2s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
+@keyframes pulse-alert {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  100% {
-    background-position: 200% 0;
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
   }
 }
 
-/* Responsive helpers */
+/* Responsive - ensure it works on actual iPads */
+@media (max-width: 1024px) {
+  .ipad-frame {
+    padding: 16px 20px;
+  }
+  
+  .project-title {
+    font-size: 26px;
+  }
+  
+  .client-welcome {
+    font-size: 16px;
+  }
+  
+  :root {
+    --ring-outer: 220px;
+    --ring-thickness: 18px;
+  }
+  
+  .ring-date {
+    font-size: 22px;
+  }
+  
+  .ring-label {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
-  .glass, .glass-strong {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  .ipad-frame {
+    grid-template-rows: 8% 45% 20% 27%;
+    grid-template-columns: 1fr;
+  }
+  
+  .center-stage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .panel:not(.rings-panel) {
+    display: none;
+  }
+  
+  :root {
+    --ring-outer: 200px;
+    --ring-thickness: 16px;
   }
 }
